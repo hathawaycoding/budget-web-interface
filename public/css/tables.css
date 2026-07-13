@@ -1,0 +1,29 @@
+.table-wrap {
+  overflow-x: auto;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.transactions-table th {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.transactions-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.amount-positive {
+  color: var(--success);
+}
+
+.amount-negative {
+  color: var(--danger);
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/navigation.css" />
+    <link rel="stylesheet" href="/css/cards.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+    <link rel="stylesheet" href="/css/tables.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+        <div class="sidebar__header">
+          <p class="sidebar__eyebrow">Midnight ledger</p>
+          <h1 class="sidebar__title">Budget Planner</h1>
+          <p class="sidebar__subtitle">Track cash flow, spending limits, and upcoming bills in one place.</p>
+        </div>
+
+        <nav class="sidebar__nav">
+          <a class="nav-link is-active" href="#dashboard" data-page="dashboard">Dashboard</a>
+          <a class="nav-link" href="#accounts" data-page="accounts">Accounts</a>
+          <a class="nav-link" href="#transactions" data-page="transactions">Transactions</a>
+          <a class="nav-link" href="#budget" data-page="budget">Budget</a>
+          <a class="nav-link" href="#goals" data-page="goals">Goals</a>
+          <a class="nav-link" href="#bills" data-page="bills">Bills</a>
+        </nav>
+
+        <div class="sidebar__footer">
+          <p>Static data demo</p>
+          <p>Version 1</p>
+        </div>
+      </aside>
+
+      <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+      <main class="main-layout">
+        <header class="topbar">
+          <div class="topbar__left">
+            <button class="icon-button mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open navigation menu">Menu</button>
+            <div>
+              <p class="topbar__eyebrow">Financial overview</p>
+              <h2 class="topbar__title" id="page-title">Dashboard</h2>
+            </div>
+          </div>
+          <div class="topbar__right">
+            <span class="status-pill">Dark theme</span>
+          </div>
+        </header>
+
+        <section class="page-content" id="page-content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="modal-root"></div>
+    <div class="toast-stack" id="toast-root" aria-live="assertive"></div>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

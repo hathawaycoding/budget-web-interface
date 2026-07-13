@@ -1,0 +1,24 @@
+{
+  "name": "budget-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "node scripts/check-js.js",
+    "typecheck": "node scripts/check-js.js",
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.1",
+    "vitest": "^2.1.8"
+  }
+}
