@@ -153,6 +153,8 @@
   display: grid;
   gap: var(--space-3);
   padding: var(--space-4);
+  max-height: calc(100dvh - (2 * var(--space-3)));
+  overflow-y: auto;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -166,4 +168,45 @@
   border-radius: var(--radius-md);
   background: rgba(15, 52, 96, 0.96);
   box-shadow: var(--shadow-sm);
+}
+
+.transaction-mobile-list {
+  display: none;
+}
+
+.transaction-mobile-card {
+  display: grid;
+  gap: 12px;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.transaction-mobile-card__header,
+.transaction-mobile-card__row,
+.transaction-mobile-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.transaction-mobile-card__header,
+.transaction-mobile-card__footer {
+  flex-wrap: wrap;
+}
+
+.transaction-mobile-card__merchant {
+  font-size: 1rem;
+}
+
+.transaction-mobile-card__amount {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.transaction-mobile-card__row {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
 }

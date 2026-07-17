@@ -2,6 +2,10 @@
   overflow-x: auto;
 }
 
+.transactions-table {
+  min-width: 720px;
+}
+
 .transactions-table th,
 .transactions-table td {
   padding: 14px 12px;

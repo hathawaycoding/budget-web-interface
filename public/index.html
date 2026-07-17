@@ -48,7 +48,7 @@
       <main class="main-layout">
         <header class="topbar">
           <div class="topbar__left">
-            <button class="icon-button mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open navigation menu">Menu</button>
+            <button class="icon-button mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="sidebar" aria-expanded="false">Menu</button>
             <div>
               <p class="topbar__eyebrow">Financial overview</p>
               <h2 class="topbar__title" id="page-title">Dashboard</h2>
@@ -61,6 +61,15 @@
 
         <section class="page-content" id="page-content" aria-live="polite"></section>
       </main>
+
+      <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a class="nav-link mobile-nav-link is-active" href="#dashboard" data-page="dashboard">Home</a>
+        <a class="nav-link mobile-nav-link" href="#accounts" data-page="accounts">Accounts</a>
+        <a class="nav-link mobile-nav-link" href="#transactions" data-page="transactions">Activity</a>
+        <a class="nav-link mobile-nav-link" href="#budget" data-page="budget">Budget</a>
+        <a class="nav-link mobile-nav-link" href="#goals" data-page="goals">Goals</a>
+        <a class="nav-link mobile-nav-link" href="#bills" data-page="bills">Bills</a>
+      </nav>
     </div>
 
     <div id="modal-root"></div>

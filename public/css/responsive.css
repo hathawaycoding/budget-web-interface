@@ -15,9 +15,14 @@
 @media (max-width: 767px) {
   .sidebar {
     position: fixed;
+    top: 0;
+    bottom: 0;
     left: -100%;
     z-index: 20;
     width: min(86vw, 320px);
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: auto;
     transition: left var(--motion-normal) ease;
   }
 
@@ -34,6 +39,78 @@
     padding: var(--space-3);
   }
 
+  .page-content {
+    padding-bottom: calc(var(--space-4) + 84px);
+  }
+
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .topbar__left,
+  .section-heading {
+    min-width: 0;
+  }
+
+  .topbar__title {
+    font-size: 1.625rem;
+    overflow-wrap: anywhere;
+  }
+
+  .topbar__right {
+    display: none;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    padding: 8px;
+    background: rgba(18, 20, 35, 0.94);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+  }
+
+  .transaction-mobile-list {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .table-wrap--desktop {
+    display: none;
+  }
+
+  .modal-overlay {
+    align-items: start;
+    padding: var(--space-2);
+  }
+
+  .modal {
+    margin-top: var(--space-2);
+    padding: var(--space-3);
+  }
+
+  .toast-stack {
+    right: var(--space-2);
+    bottom: calc(72px + var(--space-2));
+    left: var(--space-2);
+  }
+
+  .toast {
+    min-width: 0;
+    width: 100%;
+  }
+
   .summary-grid,
   .quick-actions-grid,
   .list-grid,
@@ -41,7 +118,40 @@
     grid-template-columns: 1fr;
   }
 
-  .topbar__title {
-    font-size: 1.625rem;
+  .button,
+  .button-secondary,
+  .button-danger {
+    width: 100%;
+  }
+
+  .row-between {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar,
+  .page-content {
+    padding: var(--space-2);
+  }
+
+  .card,
+  .empty-state,
+  .error-state,
+  .skeleton-card {
+    padding: var(--space-3);
+  }
+
+  .card--hero {
+    padding: var(--space-3);
+  }
+
+  .mobile-nav-link {
+    padding: 0 4px;
+    font-size: 0.6875rem;
+  }
+
+  .topbar__eyebrow {
+    font-size: 0.6875rem;
   }
 }

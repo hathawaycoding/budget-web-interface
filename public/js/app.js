@@ -45,10 +45,40 @@ function setActiveNav(page) {
 function setSidebarOpen(isOpen) {
   const sidebar = getElement('#sidebar');
   const backdrop = getElement('#sidebar-backdrop');
+  const toggle = getElement('#mobile-menu-toggle');
+  const isMobileViewport = window.innerWidth <= 767;
 
   appState.isSidebarOpen = isOpen;
   sidebar?.classList.toggle('is-open', isOpen);
+  sidebar?.setAttribute('aria-hidden', String(isMobileViewport ? !isOpen : false));
+
+  if (sidebar) {
+    sidebar.inert = isMobileViewport && !isOpen;
+  }
+
+  toggle?.setAttribute('aria-expanded', String(isOpen));
   setHidden(backdrop, !isOpen);
+}
+
+function syncNavigationLayout() {
+  if (window.innerWidth > 767) {
+    setSidebarOpen(false);
+    const sidebar = getElement('#sidebar');
+    sidebar?.setAttribute('aria-hidden', 'false');
+
+    if (sidebar) {
+      sidebar.inert = false;
+    }
+
+    return;
+  }
+
+  const sidebar = getElement('#sidebar');
+  sidebar?.setAttribute('aria-hidden', String(!appState.isSidebarOpen));
+
+  if (sidebar) {
+    sidebar.inert = !appState.isSidebarOpen;
+  }
 }
 
 async function renderPage(page) {
@@ -349,7 +379,9 @@ bindEvents();
 window.addEventListener('app:data-changed', () => {
   renderPage(appState.currentPage);
 });
+window.addEventListener('resize', syncNavigationLayout);
 window.addEventListener('hashchange', () => {
   renderPage(getInitialPage());
 });
+syncNavigationLayout();
 renderPage(getInitialPage());
